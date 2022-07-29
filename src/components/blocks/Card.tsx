@@ -112,8 +112,8 @@ export default function Card({ image, name, gender, house, dateOfBirth, wizard, 
       <CardReverse>
         <H3 variant={house} inverted={flip}>{name}</H3>
         {
-          Object.keys(characteristics).map((key) => {
-            return <Characteristic label={key} value={characteristics[key]} variant={house} invertedThemeValue={flip} />
+          Object.keys(characteristics).map((key, index) => {
+            return <Characteristic label={key} value={characteristics[key]} variant={house} invertedThemeValue={flip} key={index} />
           })
         }
       </CardReverse>

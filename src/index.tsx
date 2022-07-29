@@ -1,16 +1,58 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createRoot } from 'react-dom/client';
 
-const root = ReactDOM.createRoot(
+const root = createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <BrowserRouter>
+      <App basePath="" host="" />
+    </BrowserRouter>
+  </React.StrictMode>,
 );
+
+export interface MicrofrontendOptions {
+  basePath: string;
+  host: string;
+  history: any;
+  data: any;
+}
+
+declare global {
+  interface Window {
+    renderYourBrandNewMicrofrontend: (containerId: string, options: MicrofrontendOptions) => void;
+  }
+  interface Window {
+    unMountYourBrandNewMicrofrontend: (containerId: string) => void;
+  }
+}
+
+window.renderYourBrandNewMicrofrontend = (containerId: string, options: MicrofrontendOptions) => {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  root.render(
+    <React.StrictMode>
+      <BrowserRouter>
+        <App basePath={options.basePath} host={options.host} {...options.data} />
+      </BrowserRouter>
+    </React.StrictMode>
+  );
+  console.log(`Micro-frontend ${containerId} mounted`);
+};
+
+window.unMountYourBrandNewMicrofrontend = (containerId: string) => {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  ReactDOM.unmountComponentAtNode(container);
+  console.log(`Micro-frontend ${containerId} unmounted`);
+};
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

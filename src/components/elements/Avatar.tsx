@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import HPLogo from '../../assets/images/HPLogo.jpeg'
 import { Variant } from '../../types/styled'
 
 
@@ -44,6 +43,8 @@ const StyledAvatar = styled.img<Variant>`
 `
 
 export default function Avatar({ image, alt, variant }: AvatarProps) {
+  const HPLogo = 'https://logodix.com/logo/1188650.jpg';
+
   return (
     <StyledAvatar src={image ? image : HPLogo} alt={alt} variant={variant} />
   )

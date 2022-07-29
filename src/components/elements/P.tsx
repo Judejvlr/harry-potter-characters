@@ -3,6 +3,7 @@ import { Variant } from "../../types/styled"
 
 export const P = styled.p<Variant>`
   margin: 0;
+  text-align: left;
    ${(props) => {
     switch (props.variant) {
       case "Gryffindor":

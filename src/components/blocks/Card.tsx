@@ -23,54 +23,32 @@ const StyledCard = styled.article<Variant & Flip>`
   perspective: 1000px;
   height: 100%;
   border-radius: 5px;
-  &:after{
-    position: absolute;
-    content: '';
-    right: 0;
-    top: 0;
-  }
-  &:hover:after{
-    transition-duration: 0.2s;
-    border-right: 50px solid ${props => props.theme.palette.common.background};
-    border-radius: 0 0 0 5px;
-  }
   transform: ${props => props.flip ? 'rotateY(180deg)' : ''};
+  &:hover{
+    transform:  ${props => props.flip ? 'rotateY(160deg)' : 'rotateY(20deg)'};
+    cursor: pointer;
+  } 
   ${(props) => {
     switch (props.variant) {
       case "Gryffindor":
         return css`
           background-color: ${props.flip ? props.theme.palette.griffyndor.secondary : props.theme.palette.griffyndor.primary};
-          &:hover:after{
-            border-bottom: 50px solid ${props.flip ? props.theme.palette.griffyndor.primary : props.theme.palette.griffyndor.secondary};
-          }
           `
       case "Hufflepuff":
         return css`
           background-color: ${props.flip ? props.theme.palette.hufflepuff.secondary : props.theme.palette.hufflepuff.primary};
-          &:hover:after{
-            border-bottom: 50px solid ${props.flip ? props.theme.palette.hufflepuff.primary : props.theme.palette.hufflepuff.secondary};
-          }
           `
       case "Ravenclaw":
         return css`
           background-color: ${props.flip ? props.theme.palette.ravenclaw.secondary : props.theme.palette.ravenclaw.primary};
-          &:hover:after{
-            border-bottom: 50px solid ${props.flip ? props.theme.palette.ravenclaw.primary : props.theme.palette.ravenclaw.secondary};
-          }
           `
       case "Slytherin":
         return css`
           background-color: ${props.flip ? props.theme.palette.slytherin.secondary : props.theme.palette.slytherin.primary};
-          &:hover:after{
-            border-bottom: 50px solid ${props.flip ? props.theme.palette.slytherin.primary : props.theme.palette.slytherin.secondary};
-          }
           `
       default:
         return css`
           background-color: ${props.flip ? props.theme.palette.default.secondary : props.theme.palette.default.primary};
-          &:hover:after{
-            border-bottom: 50px solid ${props.flip ? props.theme.palette.default.primary : props.theme.palette.default.secondary};
-          }
         `
     }
   }};

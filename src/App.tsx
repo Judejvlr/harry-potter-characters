@@ -1,29 +1,33 @@
-import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './theme/globalStyles';
 import { HarryPotterTheme } from './theme/theme';
 import CharactersList from './views/charactersLists';
 import './config/i18n';
-import Main from './views/main';
+import i18n from './config/i18n';
 
-function App(props: { basePath: string; host: string }) {
-  console.log(`BasePath is AAA ${props.basePath}`);
-  console.log(`Host is ${props.host}`);
-  let basePath = '';
-  if (props.basePath !== '' && props.host !== '') {
-    basePath = `${props.host}`;
+function App() {
+
+
+  useEffect(() => {
+    window.addEventListener('storage', handleLanguage)
+    return (() => window.removeEventListener('storage', handleLanguage))
+  }, []);
+
+  const handleLanguage = () => {
+    const lang = localStorage.getItem('lang')
+    i18n.changeLanguage(lang ?? undefined)
   }
+
   return (
     <div className="Micro-App">
       <ThemeProvider theme={HarryPotterTheme}>
         <GlobalStyle />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/harrypotter" element={<CharactersList />} />
-        </Routes>
+        <CharactersList />
       </ThemeProvider>
     </div>
   );
 }
+
 
 export default App;

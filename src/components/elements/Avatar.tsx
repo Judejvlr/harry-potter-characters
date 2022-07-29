@@ -18,10 +18,10 @@ const StyledAvatar = styled.img<Variant>`
   }
   ${(props) => {
     switch (props.variant) {
-      // case "Gryffindor":
-      //   return css`
-      //     border-color:  ${props.theme.palette.griffyndor.secondary};
-      //     `
+      case "Gryffindor":
+        return css`
+          border-color:  ${props.theme.palette.griffyndor.secondary};
+          `
       case "Hufflepuff":
         return css`
           border-color:  ${props.theme.palette.hufflepuff.secondary};

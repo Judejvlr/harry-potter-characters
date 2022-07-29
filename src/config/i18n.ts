@@ -18,7 +18,7 @@ i18n
         }
       }
     },
-    lng: "es",
+    lng: localStorage.getItem('lang') ?? '',
     fallbackLng: "es",
 
     interpolation: {

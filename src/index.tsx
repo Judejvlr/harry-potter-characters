@@ -1,6 +1,6 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createRoot } from 'react-dom/client';
@@ -12,9 +12,7 @@ const root = createRoot(
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App basePath="" host="" />
-    </BrowserRouter>
+    <App />
   </React.StrictMode>,
 );
 
@@ -39,9 +37,7 @@ window.renderYourBrandNewMicrofrontend = (containerId: string, options: Microfro
   if (!container) return;
   root.render(
     <React.StrictMode>
-      <BrowserRouter>
-        <App basePath={options.basePath} host={options.host} {...options.data} />
-      </BrowserRouter>
+      <App basePath={options.basePath} host={options.host} {...options.data} />
     </React.StrictMode>
   );
   console.log(`Micro-frontend ${containerId} mounted`);

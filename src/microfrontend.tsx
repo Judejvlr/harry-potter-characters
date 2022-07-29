@@ -1,6 +1,5 @@
 import React from 'react';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
 import { eventsToDispatch } from './events';
 import { createRoot } from 'react-dom/client';
 
@@ -18,9 +17,7 @@ export const render = (containerId: string, options: MicrofrontendOptions) => {
   if (!container) return;
   root.render(
     <React.StrictMode>
-      <BrowserRouter>
-        <App basePath={options.basePath} host={options.host} {...options.data} />
-      </BrowserRouter>
+      <App />
     </React.StrictMode>
   );
   console.log(`Micro-frontend ${containerId} mounted`);

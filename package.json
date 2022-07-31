@@ -23,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "start:micro": "set PORT=3001 && react-app-rewired start",
     "build:micro": "react-app-rewired build"

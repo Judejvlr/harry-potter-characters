@@ -1,6 +1,6 @@
-import Card from "../../components/blocks/Card"
-import { HarryPotterTheme } from "../../theme/theme"
-import { fireEvent, render, screen } from "../../utils/test-util"
+import Card from "../../../components/blocks/Card"
+import { HarryPotterTheme } from "../../../theme/theme"
+import { fireEvent, render, screen } from "../../../utils/test-util"
 
 const characterTest = {
   name: 'Judelys Lagos',

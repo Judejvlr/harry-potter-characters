@@ -12,8 +12,8 @@ border-radius: 5px;
     switch (props.variant) {
       case "Gryffindor":
         return css`
-        background-color: ${props.inverted ? props.theme.palette.griffyndor.secondary : props.theme.palette.griffyndor.primary};
-        color: ${props.inverted ? props.theme.palette.griffyndor.primary : props.theme.palette.griffyndor.secondary};
+        background-color: ${props.inverted ? props.theme.palette.gryffindor.secondary : props.theme.palette.gryffindor.primary};
+        color: ${props.inverted ? props.theme.palette.gryffindor.primary : props.theme.palette.gryffindor.secondary};
         `
       case "Hufflepuff":
         return css`

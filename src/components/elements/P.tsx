@@ -8,7 +8,7 @@ export const P = styled.p<Variant>`
     switch (props.variant) {
       case "Gryffindor":
         return css`
-          color: ${props.inverted ? props.theme.palette.griffyndor.primary : props.theme.palette.griffyndor.secondary};
+          color: ${props.inverted ? props.theme.palette.gryffindor.primary : props.theme.palette.gryffindor.secondary};
           `
       case "Hufflepuff":
         return css`

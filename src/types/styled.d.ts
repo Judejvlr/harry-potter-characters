@@ -14,7 +14,7 @@ interface Variant {
 declare module 'styled-components' {
   export interface DefaultTheme {
     palette: {
-      griffyndor: IPalette,
+      gryffindor: IPalette,
       slytherin: IPalette,
       ravenclaw: IPalette,
       hufflepuff: IPalette,

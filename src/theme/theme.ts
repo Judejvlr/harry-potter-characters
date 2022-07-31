@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components';
 
 export const HarryPotterTheme: DefaultTheme = {
   palette: {
-    griffyndor: {
+    gryffindor: {
       primary: '#740001',
       secondary: '#d3a625',
     },

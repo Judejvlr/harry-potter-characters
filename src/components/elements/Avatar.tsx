@@ -13,14 +13,11 @@ const StyledAvatar = styled.img<Variant>`
   height: 8rem;
   width: 8rem;
   border: 0.25rem solid;
-  &_Griffyndor{
-    border-color:  ${props => props.theme.palette.griffyndor.secondary};
-  }
   ${(props) => {
     switch (props.variant) {
       case "Gryffindor":
         return css`
-          border-color:  ${props.theme.palette.griffyndor.secondary};
+          border-color:  ${props.theme.palette.gryffindor.secondary};
           `
       case "Hufflepuff":
         return css`

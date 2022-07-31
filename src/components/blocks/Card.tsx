@@ -32,7 +32,7 @@ const StyledCard = styled.article<Variant & Flip>`
     switch (props.variant) {
       case "Gryffindor":
         return css`
-          background-color: ${props.flip ? props.theme.palette.griffyndor.secondary : props.theme.palette.griffyndor.primary};
+          background-color: ${props.flip ? props.theme.palette.gryffindor.secondary : props.theme.palette.gryffindor.primary};
           `
       case "Hufflepuff":
         return css`
